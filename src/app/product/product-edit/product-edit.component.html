@@ -1,0 +1,71 @@
+<form [formGroup]="editProductForm" (ngSubmit)="editProductForm.valid && submit(editProductForm)">
+  <table>
+    <tr>
+      <td>Id:</td>
+      <td><input type="text" formControlName="id"></td>
+    </tr>
+    <tr>
+      <td>Name</td>
+      <td>
+        <input type="text" formControlName="name">
+        <ng-container *ngIf="
+        name.invalid && name.dirty">
+          <p *ngIf="name.errors?.required">Không được để trống</p>
+        </ng-container>
+      </td>
+    </tr>
+    <tr>
+    <tr>
+      <td>Price</td>
+      <td>
+        <input type="text" formControlName="price">
+        <ng-container *ngIf="
+        name.invalid && name.dirty">
+          <p *ngIf="name.errors?.required">Không được để trống</p>
+        </ng-container>
+      </td>
+    </tr>
+    <tr>
+      <td>Quantity</td>
+      <td>
+        <input type="text" formControlName="quantity">
+        <ng-container *ngIf="
+        name.invalid && name.dirty">
+          <p *ngIf="name.errors?.required">Không được để trống</p>
+        </ng-container>
+      </td>
+    </tr>
+    <tr>
+      <td>Image</td>
+      <td>
+        <input type="text" formControlName="image">
+        <ng-container *ngIf="
+        name.invalid && name.dirty">
+          <p *ngIf="name.errors?.required">Không được để trống</p>
+        </ng-container>
+      </td>
+    </tr>
+    <tr>
+      <td>Description</td>
+      <td>
+        <input type="text" formControlName="description">
+        <ng-container *ngIf="
+        name.invalid && name.dirty">
+          <p *ngIf="name.errors?.required">Không được để trống</p>
+        </ng-container>
+      </td>
+    </tr>
+    <tr>
+      <td>Category</td>
+      <td>
+        <select id="category" formControlName="category">
+          <option *ngFor="let category of categories" [value]="category.id">{{category.name}}</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><button>Submit</button></td>
+    </tr>
+  </table>
+</form>

@@ -1,0 +1,35 @@
+<h1>ProductList</h1>
+<table class="table">
+  <thead class="table-success">
+  <tr>
+    <td>#</td>
+    <td>Id</td>
+    <td>Name</td>
+    <td>price</td>
+    <td>quantity</td>
+    <td>image</td>
+    <td>description</td>
+    <td>Edit</td>
+    <td>Delete</td>
+  </tr>
+  </thead>
+  <tr *ngFor="let product of products; index as i">
+    <td>{{i + 1}}</td>
+    <td>{{product.id}}</td>
+    <td>{{product.name}}</td>
+    <td>{{product.price}}</td>
+    <td>{{product.quantity}}</td>
+    <td>
+<!--      {{product?.image}}-->
+      <img
+        *ngIf="product?.image"
+        src="{{ product?.image }}"
+        height="50"
+      />
+    </td>
+    <td>{{product.description}}</td>
+    <td><a routerLink="/products/edit/{{product.id}}">Edit</a></td>
+    <td><a [routerLink]="['/products/delete', product.id]">Delete</a></td>
+  </tr>
+</table>
+

@@ -1,0 +1,79 @@
+<form #createProductForm="ngForm" (ngSubmit)="createProductForm.valid && submit(createProductForm)">
+  <p *ngIf="createProductForm.invalid">Form nhap chua dung</p>
+  <table>
+    <tr>
+      <td>Name</td>
+      <td>
+        <input type="text" required #name="ngModel"
+               name="name"
+               ngModel>
+        <ng-container *ngIf="
+        name.invalid && name.dirty || createProductForm.submitted">
+          <p *ngIf="name.errors?.required">Không được để trống</p>
+        </ng-container>
+      </td>
+    </tr>
+    <tr>
+      <td>Price</td>
+      <td>
+        <input type="text" required #name="ngModel"
+               name="price"
+               ngModel>
+        <ng-container *ngIf="
+        name.invalid && name.dirty || createProductForm.submitted">
+          <p *ngIf="name.errors?.required">Không được để trống</p>
+        </ng-container>
+      </td>
+    </tr>
+    <tr>
+      <td>Quantity</td>
+      <td>
+        <input type="text" required #name="ngModel"
+               name="quantity"
+               ngModel>
+        <ng-container *ngIf="
+        name.invalid && name.dirty || createProductForm.submitted">
+          <p *ngIf="name.errors?.required">Không được để trống</p>
+        </ng-container>
+      </td>
+    </tr>
+    <tr>
+      <td>Image</td>
+      <td>
+        <input type="text" required #name="ngModel"
+               name="image"
+               ngModel>
+        <ng-container *ngIf="
+        name.invalid && name.dirty || createProductForm.submitted">
+          <p *ngIf="name.errors?.required">Không được để trống</p>
+        </ng-container>
+      </td>
+    </tr>
+    <tr>
+      <td>Description</td>
+      <td>
+        <input type="text" required #name="ngModel"
+               name="description"
+               ngModel>
+        <ng-container *ngIf="
+        name.invalid && name.dirty || createProductForm.submitted">
+          <p *ngIf="name.errors?.required">Không được để trống</p>
+        </ng-container>
+      </td>
+    </tr>
+    <tr>
+      <td>Category</td>
+      <td>
+        <select name="category" id="category" ngModel>
+          <option value="" disabled>Select category</option>
+          <option *ngFor="let category of categories" [value]="category.id">{{category.name}}</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><button>Submit</button></td>
+    </tr>
+  </table>
+</form>
+
